@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  body{
+    overflow: hidden;
+  }
+  /* Scroll bar gizliyoruz burada */
+  .categories::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ant-btn-primary {
+    background-color: #1677ff;
+  }
+}
+
+
+.menu-link.active{
+  @apply !text-[#40a9ff];
+}
