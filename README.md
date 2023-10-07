@@ -11,9 +11,3 @@
 
 
 
-### Technologies
-- Node.js
-- React.js
-- MongoDB
-
-
