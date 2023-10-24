@@ -8,9 +8,11 @@ const productRoute = require("./routes/product.js")
 const InvoiceRoute = require("./routes/invoices.js")
 const authRoute = require("./routes/auth.js");
 const userRoute = require("./routes/users.js");
+dotenv.config();
 
 const app = express();
-dotenv.config();
+const port = process.env.PORT || 5000
+
 
 const connect = async () => {
   try {
@@ -31,7 +33,7 @@ app.use("/api/invoices", InvoiceRoute)
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 
-app.listen(process.env.PORT, () => {
+app.listen(port, () => {
   connect();
-  console.log(`${process.env.PORT} Listening.... `);
+  console.log(`${port} Listening.... `);
 });

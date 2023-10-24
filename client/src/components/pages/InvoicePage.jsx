@@ -39,7 +39,7 @@ const InvoicePage = () => {
       dataIndex: "createdAt",
       key: "createdAt",
       render: (text) => {
-        return <span>{text.substring(0.1)}</span>;
+        return <span>{text.substring(0, 10)}</span>;
       },
     },
     {
