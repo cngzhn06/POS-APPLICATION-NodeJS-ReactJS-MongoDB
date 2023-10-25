@@ -4,7 +4,7 @@ import { Button, Card, Modal, Popconfirm, Table, message } from "antd";
 import Invoice from "../cart/Invoice";
 import { useDispatch, useSelector } from "react-redux";
 import { PlusCircleOutlined, MinusCircleOutlined } from "@ant-design/icons";
-import { increase, decrease, deleteCart } from "../../redux/CartSlice";
+import { increase, decrease, deleteCart } from "../../redux/cartSlice"
 
 const CartPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
