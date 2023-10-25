@@ -6,7 +6,7 @@ const Edit = ({ isEditModalOpen, setEditIsModalOpen, categories , setCategories 
 
   const onFinish = (values) => {
     try {
-      fetch("http://localhost:5000/api/categories/update-category", {
+      fetch(import.meta.env.VITE_api + "/api/categories/update-category", {
         method: "PUT",
         body: JSON.stringify({ ...values, categoryId: editRow._id }),
         headers: { "Content-type": "application/json; charset=UTF-8" },
@@ -29,7 +29,7 @@ const Edit = ({ isEditModalOpen, setEditIsModalOpen, categories , setCategories 
   const deleteCategory = (id) => {
     if(window.confirm("Emin misiniz? ")) {
         try{
-            fetch("http://localhost:5000/api/categories/delete-category" , {
+            fetch(import.meta.env.VITE_api + "/api/categories/delete-category" , {
                 method:"DELETE",
                 body: JSON.stringify({...id,categoryId:editRow.id}),
                 headers: { "Content-type": "application/json; charset=UTF-8" },

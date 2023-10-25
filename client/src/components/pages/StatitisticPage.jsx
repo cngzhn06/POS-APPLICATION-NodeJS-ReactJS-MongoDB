@@ -15,7 +15,7 @@ const StatitisticPage = () => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/products/get-all");
+        const res = await fetch(import.meta.env.VITE_api + "/api/products/get-all");
         const data = await res.json();
         setProducts(data);
       } catch (error) {
@@ -26,7 +26,7 @@ const StatitisticPage = () => {
   }, []);
 
   const asyncFetch = () => {
-    fetch("http://localhost:5000/api/invoices/get-all")
+    fetch(import.meta.env.VITE_api + "/api/invoices/get-all")
       .then((response) => {
         return response.json();
       })

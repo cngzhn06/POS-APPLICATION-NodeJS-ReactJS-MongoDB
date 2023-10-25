@@ -10,11 +10,14 @@ const HomePage = () => {
   const [categories, setCategories] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [search, setSearch] = useState("");
+  console.log();
 
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/products/get-all");
+        const res = await fetch(
+          import.meta.env.VITE_api + "/api/products/get-all"
+        );
         const data = await res.json();
         setProduct(data);
       } catch (error) {
@@ -29,7 +32,7 @@ const HomePage = () => {
     const getCategories = async () => {
       try {
         const res = await fetch(
-          "http://localhost:5000/api/categories/get-all-category"
+          import.meta.env.VITE_api + "/api/categories/get-all-category"
         );
         const data = await res.json();
         data &&
@@ -46,10 +49,9 @@ const HomePage = () => {
     getCategories();
   }, []);
 
-
   return (
     <>
-      <Header  setSearch={setSearch} />
+      <Header setSearch={setSearch} />
       <div className="home px-6 flex md:flex-row flex-col justify-between gap-10 md:pb-0 pb-24 h-screen">
         <div className="categories overflow-auto max-h-[calc(100vh_-_112px)] md:pb-10 ">
           <div>
@@ -68,7 +70,7 @@ const HomePage = () => {
               filtered={filtered}
               product={product}
               setProduct={setProduct}
-              search = {search}
+              search={search}
             />
           </div>
         </div>

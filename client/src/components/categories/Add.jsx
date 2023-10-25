@@ -9,7 +9,7 @@ const Add  = ( { isAddModalOpen , setAddIsModalOpen , categories , setCategories
 
     const onFinish = (values) => {
         try {
-          fetch("http://localhost:5000/api/categories/add-category", {
+          fetch( import.meta.env.VITE_api + "/api/categories/add-category", {
             method: "POST",
             body: JSON.stringify(values),
             headers: { "Content-type": "application/json; charset=UTF-8" },

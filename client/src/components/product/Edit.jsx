@@ -12,7 +12,9 @@ const Edit = () => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/products/get-all");
+        const res = await fetch(
+          import.meta.env.VITE_api + "/api/products/get-all"
+        );
         const data = await res.json();
         setProducts(data);
       } catch (error) {
@@ -27,7 +29,7 @@ const Edit = () => {
     const getCategories = async () => {
       try {
         const res = await fetch(
-          "http://localhost:5000/api/categories/get-all-category"
+          import.meta.env.VITE_api + "/api/categories/get-all-category"
         );
         const data = await res.json();
         data &&
@@ -47,7 +49,7 @@ const Edit = () => {
   const onFinish = (values) => {
     console.log(values);
     try {
-      fetch("http://localhost:5000/api/products/update-product", {
+      fetch(import.meta.env.VITE_api + "/api/products/update-product", {
         method: "PUT",
         body: JSON.stringify({ ...values, productId: editingItem._id }),
         headers: { "Content-type": "application/json; charset=UTF-8" },
@@ -72,7 +74,7 @@ const Edit = () => {
   const deleteProduct = (id) => {
     if (window.confirm("Emin misiniz?")) {
       try {
-        fetch("http://localhost:5000/api/products/delete-product", {
+        fetch(import.meta.env.VITE_api + "/api/products/delete-product", {
           method: "DELETE",
           body: JSON.stringify({ productId: id }),
           headers: { "Content-type": "application/json; charset=UTF-8" },

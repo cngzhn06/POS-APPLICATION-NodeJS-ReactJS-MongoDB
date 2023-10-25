@@ -11,7 +11,7 @@ const InvoicePage = () => {
   useEffect(() => {
     const getBills = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/invoices/get-all");
+        const res = await fetch(import.meta.env.VITE_api + "/api/invoices/get-all");
         const data = await res.json();
         const billItemsWithKeys = data.map((item, index) => ({ ...item, key: index }));
         setBillItem(billItemsWithKeys);

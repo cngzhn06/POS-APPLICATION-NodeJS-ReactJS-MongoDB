@@ -9,7 +9,7 @@ const Invoice = ({ isModalOpen, setIsModalOpen }) => {
   const navigate = useNavigate();
   const onFinish = async (values) => {
     try {
-      const res = await fetch("http://localhost:5000/api/invoices/add-invoice", {
+      const res = await fetch(import.meta.env.VITE_api + "/api/invoices/add-invoice", {
         method: "POST",
         body: JSON.stringify({
           ...values,

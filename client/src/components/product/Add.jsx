@@ -7,7 +7,7 @@ const Add = ({ isAddModalOpen, setAddIsModalOpen, categories, product ,setProduc
 
   const onFinish = (values) => {
     try {
-      fetch("http://localhost:5000/api/products/add-product", {
+      fetch(import.meta.env.VITE_api + "/api/products/add-product", {
         method: "POST",
         body: JSON.stringify(values),
         headers: { "Content-type": "application/json; charset=UTF-8" },
