@@ -1,7 +1,7 @@
 import { Button, Card, Form, Input, message, Modal, Select } from "antd";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { reset } from "../../redux/cartSlice.jsx";
+import { reset } from "../../redux/CartSlice.jsx";
 
 const Invoice = ({ isModalOpen, setIsModalOpen }) => {
   const cart = useSelector((state) => state.cart);
